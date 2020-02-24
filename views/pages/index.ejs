@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../includes/head') %>
+</head>
+
+<body class="container">
+    <header>
+        <%- include('../includes/header') %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>This is great</h1>
+            <p>Welcome to templating with EJS</p>
+        </div>
+
+        <h2>Passed variable</h2>
+        <p><%= tagline %></p>
+
+        <h2>Looped passed data</h2>
+            <% if(drinks.length == 0) { %>
+                <p>No drinks available</p>
+            <% } else { %>
+                <ul>
+                    <% for(let drink of drinks) { %>
+                        <li>Name : <%= drink.name %> || Drunkness : <%= drink.drunkness %></li>
+                    <% } %>
+                </ul>
+            <% } %>
+    </main>
+
+    <footer>
+        <%- include('../includes/footer') %>
+    </footer>
+</body>
+</html>
