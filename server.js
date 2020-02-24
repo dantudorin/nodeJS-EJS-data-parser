@@ -7,6 +7,7 @@ const application = express();
 
 application.set('view engine', 'ejs');
 
+application.use(express.static(__dirname + '/public'));
 application.use(aboutRoute);
 application.use(indexRoute);
 
